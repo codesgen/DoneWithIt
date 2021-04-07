@@ -1,6 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  TouchableNativeFeedback,
+} from "react-native";
 
 export default function App() {
   return (
@@ -11,13 +18,11 @@ export default function App() {
         additional styles. The title and body will stack on top of each other on
         account of the literal newlines:
       </Text>
-      <Image
-        source={{
-          uri: "https://picsum.photos/200/300",
-          width: 200,
-          height: 300,
-        }}
-      />
+      <TouchableNativeFeedback onPress={() => console.log("Image Touched")}>
+        <View
+          style={{ width: 200, height: 70, backgroundColor: "blue" }}
+        ></View>
+      </TouchableNativeFeedback>
       <StatusBar style="auto" />
     </View>
   );
