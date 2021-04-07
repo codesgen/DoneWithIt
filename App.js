@@ -1,10 +1,19 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Button, StyleSheet, View, Alert } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  View,
+  Alert,
+  SafeAreaView,
+  Text,
+  Platform,
+  StatusBar,
+} from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Text>Hello</Text>
       <Button
         color="orange"
         title="Click me"
@@ -21,7 +30,7 @@ export default function App() {
           ])
         }
       ></Button>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -29,7 +38,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
