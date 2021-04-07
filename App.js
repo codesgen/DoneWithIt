@@ -8,28 +8,16 @@ import {
   Text,
   Platform,
   StatusBar,
+  Dimensions,
 } from "react-native";
 
 export default function App() {
+  console.log(Dimensions.get("screen"));
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Hello</Text>
-      <Button
-        color="orange"
-        title="Click me"
-        onPress={() =>
-          Alert.alert("My Title", "My Message", [
-            {
-              text: "Yes",
-              onPress: () => console.log("Yes"),
-            },
-            {
-              text: "No",
-              onPress: () => console.log("No"),
-            },
-          ])
-        }
-      ></Button>
+      <View
+        style={{ backgroundColor: "dodgerblue", width: "50%", height: 70 }}
+      ></View>
     </SafeAreaView>
   );
 }
