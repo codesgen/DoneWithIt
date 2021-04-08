@@ -1,31 +1,12 @@
 import React from "react";
-import {
-  Button,
-  StyleSheet,
-  View,
-  Alert,
-  SafeAreaView,
-  Text,
-  Platform,
-  StatusBar,
-  Dimensions,
-} from "react-native";
+import { View } from "react-native";
 
 export default function App() {
-  console.log(Dimensions.get("screen"));
   return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{ backgroundColor: "dodgerblue", width: "50%", height: 70 }}
-      ></View>
-    </SafeAreaView>
+    <View style={{ backgroundColor: "#fff", flex: 1 }}>
+      <View style={{ backgroundColor: "dodgerblue", flex: 2 }}></View>
+      <View style={{ backgroundColor: "gold", flex: 1 }}></View>
+      <View style={{ backgroundColor: "tomato", flex: 1 }}></View>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
